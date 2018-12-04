@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TestPrepPrototype</string>
+    <string name="enter_word">Enter word</string>
+    <string name="listButton">Go to lists</string>
+    <string name="addButton">Add</string>
+    <string name="homeButton">Home</string>
+    <string name="previousButton">Previous Date</string>
+    <string name="nextButton">Next Date</string>
+    <string name="title">Instant Word List</string>
+    <string name="date">12/03/2018</string>
+    <string name="word">Word</string>
+    <string name="addDefButton">Add Definition</string>
+    <string name="choose_definition">Choose Definition</string>
+    <string name="definition1">a single distinct meaningful element of speech or writing</string>
+    <string name="definition2">a single distinct conceptual unit of language, comprising inflected and variant forms</string>
+    <string name="deleteWordButton">Delete Word</string>
+    <string name="add_or_change_definition">Add or Change Definition</string>
+    <string name="listDef1">a single distinct meaningful element of speech or writing</string>
+    <string name="listWord1">word</string>
+</resources>
