@@ -15,7 +15,7 @@
         android:textSize="36sp" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/wordView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView5"
@@ -27,71 +27,25 @@
         android:text="@string/word"
         android:textSize="24sp" />
 
-    <TableLayout
-        android:id="@+id/definition_table"
-        android:layout_width="match_parent"
-        android:layout_height="446dp"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="-70dp">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/def1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/definition1" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <TextView
-                android:id="@+id/def2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/definition2" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
-
     <Button
-        android:id="@+id/button7"
-        android:layout_width="205dp"
-        android:layout_height="47dp"
-        android:layout_below="@+id/definition_table"
+        android:id="@+id/addDef"
+        android:layout_width="203dp"
+        android:layout_height="49dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
+        android:layout_marginTop="177dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:layout_marginBottom="0dp"
-        android:layout_toStartOf="@+id/button9"
-        android:layout_toLeftOf="@+id/button9"
+        android:layout_toStartOf="@+id/delWord"
+        android:layout_toLeftOf="@+id/delWord"
         android:text="@string/addDefButton" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/delWord"
         android:layout_width="197dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -101,5 +55,25 @@
         android:layout_marginRight="0dp"
         android:layout_marginBottom="0dp"
         android:text="@string/deleteWordButton" />
+
+    <!--This is a sample definition text which will be replaced with a list*/ -->
+    <TextView
+        android:id="@+id/definitionView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/definition" />
+
+    <Button
+        android:id="@+id/testShowDefinition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginBottom="80dp"
+        android:text="@string/showDefinition" />
 
 </RelativeLayout>

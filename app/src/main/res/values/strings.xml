@@ -17,4 +17,6 @@
     <string name="add_or_change_definition">Add or Change Definition</string>
     <string name="listDef1">a single distinct meaningful element of speech or writing</string>
     <string name="listWord1">word</string>
+    <string name="definition">Definition will show up here</string>
+    <string name="showDefinition">Test Show Def</string>
 </resources>
