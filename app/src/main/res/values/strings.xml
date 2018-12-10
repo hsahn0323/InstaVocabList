@@ -19,4 +19,7 @@
     <string name="listWord1">word</string>
     <string name="definition">Definition will show up here</string>
     <string name="showDefinition">Test Show Def</string>
+    <string name="sample_word">Word shown here</string>
+    <string name="sample_definition">Definition shown here</string>
+    <string name="sample_definition_display">Definition will be displayed here</string>
 </resources>
