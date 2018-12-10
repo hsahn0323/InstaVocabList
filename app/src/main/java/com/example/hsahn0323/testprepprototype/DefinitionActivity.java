@@ -11,9 +11,11 @@ import java.util.HashMap;
 
 import com.google.gson.*;
 
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.view.View;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -37,6 +39,8 @@ public class DefinitionActivity extends AppCompatActivity {
     private ArrayList<String> definitionArrayList = new ArrayList<>();
     private ArrayAdapter<String> adapterD;
     private ListView definitionListView;
+
+    private String selectedDefinition;
 
     private static RequestQueue requestQueue;
 
@@ -107,21 +111,7 @@ public class DefinitionActivity extends AppCompatActivity {
 
     public void addDefinitions(JSONObject thisObject) {
         try {
-            //Gson gson = new Gson();
-            //String jsonString = gson.toJson(thisObject);
-            //definitionArrayList = gson.fromJson(jsonString, );
-            //JSONArray definitionArray = json;
-            //JsonParser parser = new JsonParser();
             Log.d(TAG, thisObject.toString());
-            /*JsonArray definitionArray = parser.parse(jsonString)
-                    .getAsJsonObject().getAsJsonArray("results")
-                    .getAsJsonObject().getAsJsonArray("lexicalEntries")
-                    .getAsJsonObject().getAsJsonArray("entries")
-                    .getAsJsonObject().getAsJsonArray("senses")
-                    .getAsJsonObject().getAsJsonArray("definitions");
-            for (int i = 0; i < definitionArray.size(); i++) {
-                definitionArrayList.add(definitionArray.get(i).toString());
-            }*/
 
             definitionArray = thisObject.getJSONArray("results")
                     .getJSONObject(0)
@@ -132,17 +122,26 @@ public class DefinitionActivity extends AppCompatActivity {
                     .getJSONArray("senses");
             for (int i = 0; i < definitionArray.length(); i++) {
 
-                String sampleDefinitionString = definitionArray.getJSONObject(i).getJSONArray("definitions").getString(0);
+                String definitionString = definitionArray.getJSONObject(i).getJSONArray("definitions").getString(0);
 
-                definitionArrayList.add(sampleDefinitionString);
-                Log.d("data", sampleDefinitionString);
+                definitionArrayList.add(definitionString);
+                Log.d("data", definitionString);
+                adapterD.notifyDataSetChanged();
             }
 
         } catch (JSONException e) {
             Log.w(TAG, e);
         }
+    }
 
-
-
+    public void registerClickCallback() {
+        definitionListView = findViewById(R.id.definitionView);
+        definitionListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View viewClicked, int position, long id) {
+                selectedDefinition = ((TextView) viewClicked).getText().toString();
+                Log.d("Selected Definition: ", selectedDefinition);
+            }
+        });
     }
 }
