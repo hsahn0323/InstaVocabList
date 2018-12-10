@@ -3,6 +3,7 @@
     android:id="@+id/sample_definition_list_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:text="@string/sample_definition_display">
+    android:text="@string/sample_definition_display"
+    android:background="@drawable/my_selector">
 
 </TextView>

@@ -55,7 +55,7 @@ public class DefinitionActivity extends AppCompatActivity {
         //definition = findViewById(R.id.definitionView);
         //wordText.setText(/*User selected word*/);
 
-        String wordInput = /*wordText.getText().toString()*/"word";
+        String wordInput = /*wordText.getText().toString()*/"jump";
 
         definitionListView = findViewById(R.id.definitionView);
         startAPICall(wordInput);
@@ -67,6 +67,14 @@ public class DefinitionActivity extends AppCompatActivity {
                 R.id.sample_definition_list_view,
                 definitionArrayList);
         definitionListView.setAdapter(adapterD);
+        definitionListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View viewClicked, int position, long id) {
+                viewClicked.setSelected(true);
+                selectedDefinition = ((TextView) viewClicked).getText().toString();
+                Log.d("Selected Definition: ", selectedDefinition);
+            }
+        });
 
         //addDefinitions(jsonObject);
     }
@@ -136,12 +144,6 @@ public class DefinitionActivity extends AppCompatActivity {
 
     public void registerClickCallback() {
         definitionListView = findViewById(R.id.definitionView);
-        definitionListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View viewClicked, int position, long id) {
-                selectedDefinition = ((TextView) viewClicked).getText().toString();
-                Log.d("Selected Definition: ", selectedDefinition);
-            }
-        });
+
     }
 }
