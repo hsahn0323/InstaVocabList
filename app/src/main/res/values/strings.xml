@@ -12,4 +12,5 @@
     <string name="definition1">definition1</string>
     <string name="definition2">definition2</string>
     <string name="add_word">add_word</string>
+    <string name="sample_definition_display">sample_definition_display</string>
 </resources>

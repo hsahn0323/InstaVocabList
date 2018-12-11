@@ -34,16 +34,14 @@ public class MainActivity extends AppCompatActivity {
         btAdd.setOnClickListener(new View.OnClickListener() {
             //@Override
             public void onClick(View v) {
+                Intent intent = new Intent (MainActivity.this, DefinitionActivity.class);
                 String newItem = txtInput.getText().toString();
                 Log.d("addItem test","---------------------------------------\n"+newItem);
 
                 adapter.add(newItem);
                 adapter.notifyDataSetChanged();
+                startActivity(intent);
             }
         });
     }
-    /*public void addItems(View v) {
-        arrayList.add("Clicked : "+clickCounter++);
-        adapter.notifyDataSetChanged();
-    }*/
 }
