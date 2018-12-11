@@ -27,6 +27,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONException;
+import org.w3c.dom.Text;
 
 public class DefinitionActivity extends AppCompatActivity {
 
@@ -51,12 +52,13 @@ public class DefinitionActivity extends AppCompatActivity {
 
         requestQueue = Volley.newRequestQueue(this);
 
-        TextView wordText = findViewById(R.id.wordView);
         //definition = findViewById(R.id.definitionView);
         //wordText.setText(/*User selected word*/);
 
-        String wordInput = /*wordText.getText().toString()*/"jump";
-
+        String wordInput = /*wordText.getText().toString()*/getIntent().getStringExtra("wordDefinition");
+        TextView wordShown = (TextView) findViewById(R.id.wordView);
+        String newWord = getIntent().getStringExtra("wordDefinition");
+        wordShown.setText(newWord);
         definitionListView = findViewById(R.id.definitionView);
         startAPICall(wordInput);
 

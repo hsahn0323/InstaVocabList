@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent (MainActivity.this, DefinitionActivity.class);
                 String newItem = txtInput.getText().toString();
+                intent.putExtra("wordDefinition", newItem);
                 Log.d("addItem test","---------------------------------------\n"+newItem);
 
                 adapter.add(newItem);
