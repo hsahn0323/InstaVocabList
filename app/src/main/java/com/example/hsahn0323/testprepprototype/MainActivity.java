@@ -28,9 +28,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent (MainActivity.this, DefinitionActivity.class);
                 String newWord = txtInput.getText().toString();
                 adapter.add(newWord);
                 adapter.notifyDataSetChanged();
+                startActivity(intent);
             }
         });
     }

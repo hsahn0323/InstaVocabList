@@ -25,7 +25,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.hsahn0323.testprepprototype.MainActivity" />
         </activity>
-        <activity android:name=".DefinitionActivity"></activity>
+        <activity
+            android:name=".DefinitionActivity"
+            android:parentActivityName=".MainActivity"
+            ></activity>
     </application>
 
 </manifest>
