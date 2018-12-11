@@ -22,4 +22,6 @@
     <string name="sample_word">Word shown here</string>
     <string name="sample_definition">Definition shown here</string>
     <string name="sample_definition_display">Definition will be displayed here</string>
+    <string name="add_word">add_word</string>
+    <string name="insert_word_here">insert_word_here</string>
 </resources>

@@ -8,23 +8,29 @@ import android.content.Intent;
 import android.widget.EditText;
 import android.widget.*;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class MainActivity extends AppCompatActivity {
+    ArrayList<String> arrayList = new ArrayList<String>();
+    WordListAdapter adapter;
+    private EditText txtInput;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        final EditText editText = findViewById(R.id.add_word_text);
-        Button addButton = findViewById(R.id.add_word_button);
+        setContentView(R.layout.activtity_main);
+        ListView list = (ListView) findViewById(R.id.theList);
+        adapter = new WordListAdapter(MainActivity.this, R.layout.adapter_layout, arrayList);
+        list.setAdapter(adapter);
+         txtInput = (EditText) findViewById(R.id.editText);
+        Button addButton = findViewById(R.id.insertWord);
 
         addButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                String newWord = editText.getText().toString().trim();
-                Intent intent = new Intent(MainActivity.this, ListActivity.class);
-                intent.putExtra("Word", newWord);
+                String newWord = txtInput.getText().toString();
+                adapter.add(newWord);
+                adapter.notifyDataSetChanged();
             }
         });
     }
